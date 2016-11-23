@@ -101,8 +101,9 @@
                 // Only strings, numbers, and booleans will be reported
                 if (argument_type === 'string' || argument_type === 'number' || argument_type === 'boolean') {
                     arguments_string += argument;
-                }
-                else {
+                } else if (argument_type === 'object') {
+                    arguments_string += JSON.stringify(argument);
+                } else {
                     arguments_string += '[Object object]';
                 }
 
